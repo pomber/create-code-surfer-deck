@@ -1,6 +1,6 @@
-# mdx-deck basic template
+# MDX Deck + Code Surfer template
 
-This was generated with [mdx-deck][]'s `npm init deck` command.
+This project was generated with the `npm init code-surfer-deck` command.
 
 ## Development
 
@@ -14,12 +14,10 @@ Edit the [`deck.mdx`](deck.mdx) file to get started.
 
 ## Exporting
 
-To build the presentation deck as static HTML:
+To build the presentation deck:
 
 ```sh
 npm run build
 ```
 
-For more documentation see the [mdx-deck][] repo.
-
-[mdx-deck]: https://github.com/jxnblk/mdx-deck
+For more documentation see [mdx-deck](https://github.com/jxnblk/mdx-deck) and [code-surfer](https://github.com/pomber/code-surfer)
