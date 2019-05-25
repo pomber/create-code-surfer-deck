@@ -4,4 +4,6 @@ Create a presentation using [MDX Deck](https://github.com/jxnblk/mdx-deck) and [
 
 ```bash
 $ npm init code-surfer-deck my-deck
+$ cd my-deck
+$ npm start
 ```
