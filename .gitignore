@@ -15,4 +15,4 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-template/yarn.lock
+templates/basic/yarn.lock

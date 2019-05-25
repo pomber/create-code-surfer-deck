@@ -15,7 +15,7 @@ log.error = (...args) => {
   console.log(chalk.red("[ERROR]"), ...args);
 };
 
-const template = "pomber/create-code-surfer-deck/template";
+const template = "pomber/create-code-surfer-deck/templates/basic";
 
 const cli = meow(
   `
