@@ -7,7 +7,7 @@ const initit = require("initit");
 
 // From: https://github.com/jxnblk/mdx-deck/blob/master/packages/create-deck/cli.js
 
-const logo = chalk.magenta("[mdx-deck]");
+const logo = chalk.magenta("[code-surfer-deck]");
 const log = (...args) => {
   console.log(logo, ...args);
 };
@@ -50,11 +50,11 @@ if (!name) {
 // todo: ensure directory doesn't exist
 initit({ name, template })
   .then(res => {
-    log("created mdx-deck");
+    log("created code-surfer-deck");
     process.exit(0);
   })
   .catch(err => {
-    log.error("failed to create mdx-deck");
+    log.error("failed to create code-surfer-deck");
     log.error(err);
     process.exit(1);
   });
