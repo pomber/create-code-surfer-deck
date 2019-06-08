@@ -3,7 +3,7 @@ const fs = require("fs");
 const path = require("path");
 const meow = require("meow");
 const chalk = require("chalk");
-const initit = require("initit");
+const initit = require("./initit");
 
 // From: https://github.com/jxnblk/mdx-deck/blob/master/packages/create-deck/cli.js
 
