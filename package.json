@@ -13,6 +13,7 @@
     "chalk": "^2.4.1",
     "cross-spawn": "^6.0.5",
     "fs-extra": "^8.0.1",
+    "gunzip-maybe": "^1.4.1",
     "meow": "^5.0.0",
     "tar-fs": "^2.0.0"
   }

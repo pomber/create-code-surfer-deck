@@ -3,9 +3,13 @@ const path = require("path");
 const os = require("os");
 const exec = require("child_process").execSync;
 const spawn = require("cross-spawn");
+const https = require("https");
+const tar = require("tar-fs");
+const gunzip = require("gunzip-maybe");
 
 const install = () => {
   return new Promise((resolve, reject) => {
+    console.log("Installing dependencies...");
     const child = spawn("npm", ["install"], {
       stdio: "inherit"
     });
@@ -26,21 +30,48 @@ const gitInit = () => {
   exec('git commit -am "Init"', { stdio: "inherit" });
   return true;
 };
-const getTar = ({ user, repo, path = "", name }) => {
-  const url = `https://codeload.github.com/${user}/${repo}/tar.gz/master`;
-  const cmd = `curl ${url} | tar -xz -C ${name} --strip=3 ${repo}-master/${path}`;
-  exec(cmd, { stdio: "inherit" });
+
+const getTar = ({ user, repo, templatepath = "", name }) => {
+  return new Promise((resolve, reject) => {
+    console.log("Downloading template...");
+    const ignorePrefix = "__INITIT_IGNORE__/";
+    const ignorepath = path.join(name, ignorePrefix);
+    const extractTar = tar.extract(name, {
+      map: header => {
+        const prefix = `${repo}-master/${templatepath}`;
+        if (header.name.startsWith(prefix)) {
+          return Object.assign({}, header, {
+            name: header.name.substr(prefix.length)
+          });
+        } else {
+          return Object.assign({}, header, {
+            name: ignorePrefix + header.name
+          });
+        }
+      },
+      ignore: filepath => {
+        const isInIgnoreFolder = !path
+          .relative(ignorepath, filepath)
+          .startsWith("..");
+        return isInIgnoreFolder;
+      }
+    });
+    https.get(
+      `https://codeload.github.com/${user}/${repo}/tar.gz/master`,
+      response => response.pipe(gunzip()).pipe(extractTar)
+    );
+    extractTar.on("error", reject);
+    extractTar.on("finish", resolve);
+  });
 };
 
 const create = async (opts = {}) => {
   if (!opts.name) {
     throw new Error("name argument required");
-    return;
   }
 
   if (!opts.template) {
     throw new Error("template argument required");
-    return;
   }
 
   const dirname = path.resolve(opts.name);
@@ -49,12 +80,12 @@ const create = async (opts = {}) => {
 
   fs.ensureDirSync(name);
 
-  getTar(
+  await getTar(
     Object.assign({}, opts, {
       name,
       user,
       repo,
-      path: paths.join("/")
+      templatepath: paths.join("/")
     })
   );
 
@@ -72,8 +103,8 @@ const create = async (opts = {}) => {
 
   process.chdir(dirname);
 
-  const installed = await install();
-  const initialized = gitInit();
+  await install();
+  gitInit();
 
   exec("npm test", { stdio: "inherit" });
   return { name, dirname };
