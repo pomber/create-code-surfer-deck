@@ -31,13 +31,14 @@ const gitInit = () => {
   return true;
 };
 
-const getTar = ({ user, repo, path = "", name }) => {
+const getTar = ({ user, repo, templatepath = "", name }) => {
   return new Promise((resolve, reject) => {
     console.log("Downloading template...");
     const ignorePrefix = "__INITIT_IGNORE__/";
+    const ignorepath = path.join(name, ignorePrefix);
     const extractTar = tar.extract(name, {
       map: header => {
-        const prefix = `${repo}-master/${path}`;
+        const prefix = `${repo}-master/${templatepath}`;
         if (header.name.startsWith(prefix)) {
           return Object.assign({}, header, {
             name: header.name.substr(prefix.length)
@@ -48,7 +49,12 @@ const getTar = ({ user, repo, path = "", name }) => {
           });
         }
       },
-      ignore: filepath => filepath.startsWith(`${name}/${ignorePrefix}`)
+      ignore: filepath => {
+        const isInIgnoreFolder = !path
+          .relative(ignorepath, filepath)
+          .startsWith("..");
+        return isInIgnoreFolder;
+      }
     });
     https.get(
       `https://codeload.github.com/${user}/${repo}/tar.gz/master`,
@@ -79,7 +85,7 @@ const create = async (opts = {}) => {
       name,
       user,
       repo,
-      path: paths.join("/")
+      templatepath: paths.join("/")
     })
   );
 
