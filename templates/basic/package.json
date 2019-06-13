@@ -8,6 +8,6 @@
   },
   "devDependencies": {
     "mdx-deck": "2.3.2",
-    "code-surfer": "2.0.0-alpha.3"
+    "code-surfer": "2.0.0-alpha.5"
   }
 }
