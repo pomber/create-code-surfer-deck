@@ -20,4 +20,4 @@ To build the presentation deck:
 npm run build
 ```
 
-For more documentation see [MDX Deck](https://github.com/jxnblk/mdx-deck) and [Code Surfer](https://codesufer.pomb.us/)
+For more documentation see [MDX Deck](https://github.com/jxnblk/mdx-deck) and [Code Surfer](https://codesurfer.pomb.us/)
