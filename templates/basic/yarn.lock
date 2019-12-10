@@ -762,13 +762,13 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@code-surfer/standalone@3.0.0-beta.2":
-  version "3.0.0-beta.2"
-  resolved "https://registry.yarnpkg.com/@code-surfer/standalone/-/standalone-3.0.0-beta.2.tgz#13a8467ffb9aa5ab3307a28c34a4d2c8c0447289"
-  integrity sha512-FTfDFLMwwida7+bHyr/c1TzFvxerOYsGO0nJtkhkx70oKJsFJE4cUjwvM+M8fI4kN3WXel9UmKjAjcxbhkHEoQ==
+"@code-surfer/standalone@3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@code-surfer/standalone/-/standalone-3.0.0.tgz#b79058026f6bfd0e1336e81f16fca44c24d336cc"
+  integrity sha512-xixHMRddyWC1pquTYOp7UDBdZi+65WthhsOt3qCzCGSrMFB4Dquo9ys5xF+0xRCU2HcWjdTlSXcSYUV5kOGhEg==
   dependencies:
-    "@code-surfer/step-parser" "3.0.0-beta.2"
-    "@code-surfer/themes" "3.0.0-beta.2"
+    "@code-surfer/step-parser" "3.0.0"
+    "@code-surfer/themes" "3.0.0"
     "@types/table" "^4.0.7"
     "@types/theme-ui" "^0.2.2"
     array.prototype.flat "^1.2.1"
@@ -777,20 +777,20 @@
     rebound "^0.1.0"
     shell-quote "^1.6.1"
 
-"@code-surfer/step-parser@3.0.0-beta.2":
-  version "3.0.0-beta.2"
-  resolved "https://registry.yarnpkg.com/@code-surfer/step-parser/-/step-parser-3.0.0-beta.2.tgz#a31d78f1a7c2f0d1e071482b3eb6fe7934242238"
-  integrity sha512-sSGrCOakS4hRq8095i12df0ynqSdN6jerwBcFSDP/wynlgx9nBCO1nYBvDYLIJ6mVrUTmEYyZP429SH80X8PwQ==
+"@code-surfer/step-parser@3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@code-surfer/step-parser/-/step-parser-3.0.0.tgz#c0037ffeaa528e6378324da6d581b8e24f667ba5"
+  integrity sha512-FsbNOTK3RKRhDJzzq9kP8OlxBTPIZwH4a8gAqI01TuxVVF7zSJMb/eFm975MGIFfvHo5k6N503Mdfc6t7PNj/w==
   dependencies:
     array.prototype.flat "^1.2.1"
     diff "^4.0.1"
     prismjs "^1.16.0"
     shell-quote "^1.6.1"
 
-"@code-surfer/themes@3.0.0-beta.2":
-  version "3.0.0-beta.2"
-  resolved "https://registry.yarnpkg.com/@code-surfer/themes/-/themes-3.0.0-beta.2.tgz#44717e0606caa87d017cb3895c97c4fd8acb55e4"
-  integrity sha512-ue89e0NnAI+z/03w75FDBHuF/BntfFIHIcYXRXYai3eNgS3DqwFPPz6LJM6vKymp02l77qC6Ia0lz38OO0D4eQ==
+"@code-surfer/themes@3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@code-surfer/themes/-/themes-3.0.0.tgz#37e9097d8546cab420ed5bf158e394a9835f7ecd"
+  integrity sha512-Zw7bjyfVOC5F237aOPHmCrnauOlVb4WWRagheYaiU1rk4+A76MMiDUGG+J0U5ZKGjop6M9lw5qxXP6RVnnSq2Q==
 
 "@emotion/babel-plugin-jsx-pragmatic@^0.1.3":
   version "0.1.3"
@@ -2764,12 +2764,12 @@ code-point-at@^1.0.0:
   resolved "https://registry.yarnpkg.com/code-point-at/-/code-point-at-1.1.0.tgz#0d070b4d043a5bea33a2f1a40e2edb3d9a4ccf77"
   integrity sha1-DQcLTQQ6W+ozovGkDi7bPZpMz3c=
 
-code-surfer@3.0.0-beta.2:
-  version "3.0.0-beta.2"
-  resolved "https://registry.yarnpkg.com/code-surfer/-/code-surfer-3.0.0-beta.2.tgz#0338b1b0cd8a1bb8d4cca6768a8817f4b9e4672a"
-  integrity sha512-+oDR9xtyZm/jgCcl+JYGWqg8Him/R10l4gCzdzQfHu2hX+fmfr3xh3frRJA9xhHBWE9xoLbGqKGFK5BeWn1t/g==
+code-surfer@3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/code-surfer/-/code-surfer-3.0.0.tgz#827083f41e685a9284f45010c0603592cabde4f8"
+  integrity sha512-sIhKTfDpZUVvD3TvxtM65rP6RYptF3gzPwfYsRH9qCbc5FBk+bUW09QhmU8J5ZWOaTUbnmimTB5pQi8T+nAP3Q==
   dependencies:
-    "@code-surfer/standalone" "3.0.0-beta.2"
+    "@code-surfer/standalone" "3.0.0"
     "@types/theme-ui" "^0.2.0"
     array.prototype.flat "^1.2.1"
     diff "^4.0.1"
