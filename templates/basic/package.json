@@ -7,7 +7,7 @@
     "test": "echo \"there are no tests\""
   },
   "devDependencies": {
-    "code-surfer": "3.0.0",
+    "code-surfer": "3.1.0",
     "mdx-deck": "3.0.13"
   }
 }
